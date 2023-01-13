@@ -1,0 +1,76 @@
+{
+    "products": [
+        {
+            "name": "Apple iPhone 12",
+            "category": "Tech",
+            "price": 799.99,
+            "rating": 4.5,
+            "image": "https://example.com/iphone12.jpg"
+        },
+        {
+            "name": "Samsung Galaxy S21",
+            "category": "Tech",
+            "price": 999.99,
+            "rating": 4.8,
+            "image": "https://example.com/samsungs21.jpg"
+        },
+        {
+            "name": "MacBook Pro",
+            "category": "Tech",
+            "price": 1499.99,
+            "rating": 4.2,
+            "image": "https://example.com/macbookpro.jpg"
+        },
+        {
+            "name": "Adidas T-Shirt",
+            "category": "Clothing",
+            "price": 39.99,
+            "size": "L",
+            "rating": 4.7,
+            "image": "https://example.com/adidastshirt.jpg"
+        },
+        {
+            "name": "Nike Hoodie",
+            "category": "Clothing",
+            "price": 59.99,
+            "size": "M",
+            "rating": 4.3,
+            "image": "https://example.com/nikehoodie.jpg"
+        },
+        {
+            "name": "Gold Necklace",
+            "category": "Jewelry",
+            "price": 249.99,
+            "rating": 4.9,
+            "image": "https://example.com/goldnecklace.jpg"
+        },
+        {
+            "name": "Silver Earrings",
+            "category": "Jewelry",
+            "price": 129.99,
+            "rating": 4.6,
+            "image": "https://example.com/silverearrings.jpg"
+        },
+        {
+            "name": "Leather Backpack",
+            "category": "Accessories",
+            "price": 89.99,
+            "rating": 4.4,
+            "image": "https://example.com/leatherbackpack.jpg"
+        },
+        {
+            "name": "Smartwatch",
+            "category": "Tech",
+            "price": 199.99,
+            "rating": 4.7,
+            "image": "https://example.com/smartwatch.jpg"
+        },
+        {
+            "name": "Bluetooth Headphones",
+            "category": "Tech",
+            "price": 99.99,
+            "rating": 4.5,
+            "image": "https://example.com/bluetoothheadphones.jpg"
+        }
+    ]
+}
