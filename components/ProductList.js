@@ -15,12 +15,12 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 px-4 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {products.map((product) => (
         <div key={product.id} className="bg-white p-4 rounded-lg shadow-md">
           <img
-            src={product.imageUrl}
-            className="w-full h-32 object-cover rounded-t-lg"
+            src={product.image}
+            className="w-full h-36 object-contain rounded-t-lg items-center justify-center"
             alt={product.name}
             loading="lazy"
           />
@@ -37,6 +37,18 @@ const ProductList = () => {
                 ({product.rating} rating)
               </span>
             </div>
+          </div>
+          <div className="space-x-3">
+            <button
+              className="bg-yellow-300 text-black p-2 rounded-md hover:bg-yellow-400"
+            >
+              Buy Now
+            </button>
+            <button
+              className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700"
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       ))}

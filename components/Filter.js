@@ -1,14 +1,43 @@
 import React, { useState } from "react";
 
 const Filter = ({ products, setFilteredProducts }) => {
+  const filter = () => {
+    let filtered = products;
 
-    console.log(products, "❤️");
+    if (priceFilter !== "none") {
+      filtered = filtered.filter((product) => {
+        if (priceFilter === "low") {
+          return product.price <= 200;
+        } else {
+          return product.price > 200;
+        }
+      });
+    }
+
+    if (sizeFilter !== "none") {
+      filtered = filtered.filter((product) => product.size === sizeFilter);
+    }
+
+    if (genderFilter !== "none") {
+      filtered = filtered.filter((product) => product.gender === genderFilter);
+    }
+
+    setFilteredProducts(filtered);
+  };
+
+  console.log(products, "❤️");
 
   const [priceFilter, setPriceFilter] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
   const [sizeFilter, setSizeFilter] = useState("");
   const [genderFilter, setGenderFilter] = useState("");
 
+  /**
+   * If the value of the select element is "highToLow", then return the product.price if it's greater
+   * than 0. If the value of the select element is "lowToHigh", then return the product.price if it's
+   * less than 0. Otherwise, return true.
+   * @param e - the event object
+   */
   const handlePriceFilter = (e) => {
     setPriceFilter(e.target.value);
     setFilteredProducts(
@@ -24,6 +53,12 @@ const Filter = ({ products, setFilteredProducts }) => {
     );
   };
 
+  /**
+   * If the value of the select element is "high", then filter the products array to return only products
+   * with a rating greater than 0. If the value of the select element is "low", then filter the products
+   * array to return only products with a rating less than 0. Otherwise, return all products.
+   * @param e - the event object
+   */
   const handleRatingFilter = (e) => {
     setRatingFilter(e.target.value);
     setFilteredProducts(
@@ -39,6 +74,10 @@ const Filter = ({ products, setFilteredProducts }) => {
     );
   };
 
+  /**
+   * If the value of the size filter is equal to the size of the product, then return the product.
+   * @param e - the event object
+   */
   const handleSizeFilter = (e) => {
     setSizeFilter(e.target.value);
     setFilteredProducts(
@@ -62,6 +101,13 @@ const Filter = ({ products, setFilteredProducts }) => {
     );
   };
 
+  /**
+   * If the value of the gender filter is male, return the products that are male. If the value of the
+   * gender filter is female, return the products that are female. If the value of the gender filter is
+   * unisex, return the products that are unisex. If the value of the gender filter is all, return all
+   * products.
+   * @param e - the event object
+   */
   const handleGenderFilter = (e) => {
     setGenderFilter(e.target.value);
     setFilteredProducts(
@@ -79,6 +125,10 @@ const Filter = ({ products, setFilteredProducts }) => {
     );
   };
 
+  /**
+   * When the user clicks the clear filter button, the filter state is reset to empty strings and the
+   * filtered products state is reset to the original products state.
+   */
   const handleClearFilter = () => {
     setPriceFilter("");
     setRatingFilter("");
@@ -86,10 +136,11 @@ const Filter = ({ products, setFilteredProducts }) => {
     setGenderFilter("");
     setFilteredProducts(products);
   };
+
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
-      <h2 className="text-lg font-medium text-gray-700">Filter</h2>
-      <div className="mt-4">
+    <div className="bg-white p-4 rounded-lg shadow-md space-y-5 items-center md:flex md:space-x-5">
+      <h2 className="text-lg font-medium text-gray-700">Filters</h2>
+      <div className="flex items-center space-x-3">
         <label className="block text-gray-700 font-medium mb-1">Price</label>
         <select
           value={priceFilter}
@@ -101,7 +152,7 @@ const Filter = ({ products, setFilteredProducts }) => {
           <option value="lowToHigh">Low to High</option>
         </select>
       </div>
-      <div className="mt-4">
+      <div className="flex items-center space-x-3">
         <label className="block text-gray-700 font-medium mb-1">Rating</label>
         <select
           value={ratingFilter}
@@ -113,7 +164,7 @@ const Filter = ({ products, setFilteredProducts }) => {
           <option value="low">Low</option>
         </select>
       </div>
-      <div className="mt-4">
+      <div className="flex items-center space-x-3">
         <label className="block text-gray-700 font-medium mb-1">Size</label>
         <select
           value={sizeFilter}
@@ -129,7 +180,7 @@ const Filter = ({ products, setFilteredProducts }) => {
           <option value="XXL">XXL</option>
         </select>
       </div>
-      <div className="mt-4">
+      <div className="flex items-center space-x-3">
         <label className="block text-gray-700 font-medium mb-1">Gender</label>
         <select
           value={genderFilter}
@@ -142,10 +193,18 @@ const Filter = ({ products, setFilteredProducts }) => {
           <option value="unisex">Unisex</option>
         </select>
       </div>
-      <div className="mt-4">
+      <div className="md:w-1/3">
+        <button
+          className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700"
+          onClick={filter}
+        >
+          Apply Filters
+        </button>
+      </div>
+      <div>
         <button
           onClick={handleClearFilter}
-          className="bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700"
+          className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700"
         >
           Clear All Filters
         </button>
