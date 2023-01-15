@@ -3,6 +3,7 @@ const Filter = ({ products, setFilteredProducts }) => {
   const [priceFilter, setPriceFilter] = useState("");
   const [genderFilter, setGenderFilter] = useState("");
   const [sizeFilter, setSizeFilter] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("");
 
   const handlePriceFilter = (e) => {
     setPriceFilter(e.target.value);
@@ -14,6 +15,10 @@ const Filter = ({ products, setFilteredProducts }) => {
 
   const handleSizeFilter = (e) => {
     setSizeFilter(e.target.value);
+  };
+
+  const handleCategoryFilter = (e) => {
+    setCategoryFilter(e.target.value);
   };
 
   const handleApplyFilters = () => {
@@ -43,6 +48,12 @@ const Filter = ({ products, setFilteredProducts }) => {
       );
     }
 
+    if (categoryFilter !== "") {
+        filteredProducts = filteredProducts.filter(
+          (product) => product.category === categoryFilter
+        );
+      }
+
     setFilteredProducts(filteredProducts);
   };
 
@@ -55,6 +66,7 @@ const Filter = ({ products, setFilteredProducts }) => {
     setPriceFilter("");
     setSizeFilter("");
     setGenderFilter("");
+    setCategoryFilter("");
     setFilteredProducts(products);
   };
 
@@ -117,6 +129,25 @@ const Filter = ({ products, setFilteredProducts }) => {
             <option value="Unisex">Unisex</option>
           </select>
         </div>
+
+         {/* Category Filter */}
+
+         <div className="flex items-center space-x-3 pb-5">
+          <label className="block text-gray-700 font-medium mb-1">Category</label>
+          <select
+            value={categoryFilter}
+            onChange={handleCategoryFilter}
+            className="bg-gray-200 rounded-md p-2 text-gray-700 focus:outline-none focus:shadow-outline-blue focus:border-blue-300"
+          >
+            <option value="">All</option>
+            <option value="Tech">Tech</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Jewelry">Jewelry</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Sports">Sports</option>
+          </select>
+        </div>
+
 
         {/* Filter Buttons */}
 
