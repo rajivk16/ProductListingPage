@@ -1,0 +1,66 @@
+{
+    "products": [
+        {
+            "name": "Apple iPhone 12",
+            "category": "Tech",
+            "price": 799.99,
+            "image": "https://www.reliancedigital.in/medias/Apple-12-Smartphones-491901529-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzNDM2NXxpbWFnZS9qcGVnfGltYWdlcy9oZGUvaDBjLzk0MDc3MjI4NDgyODYuanBnfGM0NDk5NDc1NmFhMTgwNzVmODQ2NTQzNjBkM2E1Yzk0MWVjZmM4MzA3ZDc1ZTFmZjQ2MjJiYWViMGY3NzEzYzY"
+        },
+        {
+            "name": "Samsung Galaxy S21",
+            "category": "Tech",
+            "price": 999.99,
+            "image": "https://specials-images.forbesimg.com/imageserve/6000623b6ecde8b8ef98a39b/Samsung-Galaxy-S21/960x0.jpg?fit=scale"
+        },
+        {
+            "name": "MacBook Pro",
+            "category": "Tech",
+            "price": 1499.99,
+            "image": "https://media.istockphoto.com/id/492106324/photo/macbook-pro.jpg?s=612x612&w=0&k=20&c=wyXfc622N6lgFsG6RbMCNYIH79PJKtBsd0nzCA5m9ag="
+        },
+        {
+            "name": "Adidas T-Shirt",
+            "category": "Clothing",
+            "price": 39.99,
+            "size": "L",
+            "image": "https://w7.pngwing.com/pngs/129/550/png-transparent-t-shirt-adidas-originals-trefoil-crew-neck-adidas-tshirt-white-logo.png"
+        },
+        {
+            "name": "Nike Hoodie",
+            "category": "Clothing",
+            "price": 59.99,
+            "size": "M",
+            "image": "https://cdn.shopify.com/s/files/1/0061/9970/5711/products/7788555bd8ba4dc7935b1d07c7991e42_grande.jpg?v=1635269337"
+        },
+        {
+            "name": "Gold Necklace",
+            "category": "Jewelry",
+            "price": 249.99,
+            "image": "https://t4.ftcdn.net/jpg/00/48/11/57/360_F_48115755_9ArFR9akV3S17tztNEyDOU1PY4ekoEco.jpg"
+        },
+        {
+            "name": "Silver Earrings",
+            "category": "Jewelry",
+            "price": 129.99,
+            "image": "https://media.istockphoto.com/id/623272512/photo/silver-earrings-on-white-background.jpg?s=612x612&w=0&k=20&c=ofw3JzoEfbSgL9LW2674HQQHoD3WogGcciwm7kZve6E="
+        },
+        {
+            "name": "Leather Backpack",
+            "category": "Accessories",
+            "price": 89.99,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg0U0UyfkB5ADqB7G9P8UmOQmpA_mQxNFMmw&usqp=CAU"
+        },
+        {
+            "name": "Smartwatch",
+            "category": "Tech",
+            "price": 199.99,
+            "image": "https://st2.depositphotos.com/3364427/6695/i/950/depositphotos_66953691-stock-photo-smart-watch-with-simple-design.jpg"
+        },
+        {
+            "name": "Bluetooth Headphones",
+            "category": "Tech",
+            "price": 99.99,
+            "image": "https://static.vecteezy.com/system/resources/previews/007/606/957/large_2x/wireless-bluetooth-headphones-isolated-on-white-background-free-photo.jpg"
+        }
+    ]
+}
