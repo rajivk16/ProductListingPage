@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 function Home() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [sortedProducts, setSortedProducts] = useState([]);
+
 
   /* Fetching the data from the json file and setting the state of products. */
   useEffect(() => {
@@ -20,7 +22,6 @@ function Home() {
       .catch((err) => console.log(err));
   }, []);
 
-  /* Setting the initial state of filteredProducts to products. */
   useEffect(() => {
     if (products) {
       setFilteredProducts(products);

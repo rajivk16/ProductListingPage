@@ -19,14 +19,16 @@ const Filter = ({ products, setFilteredProducts }) => {
   const handleApplyFilters = () => {
     let filteredProducts = products;
 
-    if (priceFilter === "descending") {
-      filteredProducts = filteredProducts.sort((a, b) =>
+    if (priceFilter === "high") {
+      filteredProducts = filteredProducts.slice().sort((a, b) =>
         a.price < b.price ? 1 : -1
       );
-    } else if (priceFilter === "ascending") {
-      filteredProducts = filteredProducts.sort((a, b) =>
+      console.log(filteredProducts, 'filtered HtoL');
+    } else if (priceFilter === "low") {
+      filteredProducts = filteredProducts.slice().sort((a, b) =>
         a.price > b.price ? 1 : -1
       );
+      console.log(filteredProducts, 'filtered LtoH');
     }
 
     if (genderFilter !== "") {
@@ -42,7 +44,6 @@ const Filter = ({ products, setFilteredProducts }) => {
     }
 
     setFilteredProducts(filteredProducts);
-    console.log(filteredProducts, 'filtered');
   };
 
   /**
@@ -76,8 +77,8 @@ const Filter = ({ products, setFilteredProducts }) => {
             className="bg-gray-200 rounded-md p-2 text-gray-700 focus:outline-none focus:shadow-outline-blue focus:border-blue-300"
           >
             <option value="">All</option>
-            <option value="descending">High to Low</option>
-            <option value="ascending">Low to High</option>
+            <option value="high">High to Low</option>
+            <option value="low">Low to High</option>
           </select>
         </div>
 
