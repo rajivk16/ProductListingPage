@@ -98,6 +98,7 @@ const Filter = ({ products, setFilteredProducts }) => {
             <option value="L">L</option>
             <option value="XL">XL</option>
             <option value="XXL">XXL</option>
+            <option value="N/A">Onesize</option>
           </select>
         </div>
 
